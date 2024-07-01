@@ -38,6 +38,7 @@ function showInfo(){
     getData.forEach((element, index)=>{
         let createElement = `<tr class= "employeDetails"> 
         <td>${index+1}</td>
+        <td><img src="${element.picture}" alt="" width="50" height="50"></td>
         <td>${element.employeeName}</td>
         <td>${element.employeeAge}</td>
         <td>${element.employeeCity}</td>
@@ -45,6 +46,7 @@ function showInfo(){
         <td>${element.employeePhone}</td>
         <td>${element.employeePost}</td>
         <td>${element.startDate}</td>
+        
         </tr>`
     })
 }
