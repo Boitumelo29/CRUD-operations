@@ -21,3 +21,15 @@ td button i{
     align-items: flex-start;
     padding: 0;
 }
+
+.modal-body form .imgholder{
+    flex-basis:  32%;
+    height: 100%;
+}
+
+
+.modal-body form inputField{
+    flex-basis: 68%;
+    border-left: 5px groove blue;
+    padding-left: 20px;
+}
