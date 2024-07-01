@@ -80,7 +80,15 @@ form .inputField > div label{
     font-weight: 500;
 }
 
-#userForm form.inputField > div label::after{
+#userForm form .inputField > div label::after{
     content: "*";
     color: red;
+}
+
+form .inputField > div input{
+    width: 75%;
+    padding: 10px;
+    border: none;
+    outline:  none;
+    border-bottom: 2px solid blue;
 }
