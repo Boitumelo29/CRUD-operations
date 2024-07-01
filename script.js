@@ -16,6 +16,8 @@ let getData = localStorage.getItem("userProfile") ? JSON.parse(localStorage.getI
 
 let isData = false, editId
 
+
+//I stopped at 20: 01
 file.onchange = function(){
     if(file.files[0].size < 100000000){
         var  fileReader = new FileReader();
