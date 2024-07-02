@@ -19,7 +19,7 @@ let getData = localStorage.getItem("userProfile") ? JSON.parse(localStorage.getI
 
 let isEdit = false, editId
 
-
+// we are
 newUserBtn.addEventListener('click', ()=> {
     submitBtn.innerText = 'Submit',
     modalTitle.innerText = 'Fill the form'
@@ -28,7 +28,7 @@ newUserBtn.addEventListener('click', ()=> {
     form.rest()
 })
 
-//I stopped at 20: 01
+
 file.onchange = function(){
     if(file.files[0].size < 100000000){
         var  fileReader = new FileReader();
