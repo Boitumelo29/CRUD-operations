@@ -69,14 +69,14 @@ function showInfo(){
 }
 
 function readInfo(pic, name, age, city,email, phone, post, sDate){
-    document.querySelector('.showImg').src = pic,
-    document.querySelector('#showName').value = name,
-    document.querySelector("#showAge").value = age,
-    document.querySelector("#showCity").value = city,
-    document.querySelector("#showEmail").value = email,
-    document.querySelector("#showPhone").value = phone,
-    document.querySelector("#showPost").value = post,
-    document.querySelector("#showsDate").value = sDate
+    document.querySelector('showImg').src = pic,
+    document.querySelector('showName').value = name,
+    document.querySelector("showAge").value = age,
+    document.querySelector("showCity").value = city,
+    document.querySelector("showEmail").value = email,
+    document.querySelector("showPhone").value = phone,
+    document.querySelector("showPost").value = post,
+    document.querySelector("showsDate").value = sDate
 }
 
 function editInfo(index, pic, name, age, city, email, phone, post, sDate){
