@@ -65,7 +65,7 @@
 
     <!--modal form-->
     <div class="modal fade" id="userForm">
-        <div class="modal-dialog modal-dialog-centered modal lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Fill The Form</h4>
@@ -85,31 +85,31 @@
                         <div class="inputField">
                             <div>
                                 <label for="name">Name:</label>
-                                <input type="text" name="" id="name">
+                                <input type="text" name="" id="name" required>
                             </div>
                             <div>
                                 <label for="age">Age:</label>
-                                <input type="number" name="" id="age">
+                                <input type="number" name="" id="age" required>
                             </div>
                             <div>
                                 <label for="city">City:</label>
-                                <input type="text" name="" id="city">
+                                <input type="text" name="" id="city" required>
                             </div>
                             <div>
                                 <label for="email">E-mail:</label>
-                                <input type="text" name="" id="email">
+                                <input type="text" name="" id="email" required>
                             </div>
                             <div>
                                 <label for="phone">Phone:</label>
-                                <input type="text" name="" id="phone" maxlength="10" minlength="10">
+                                <input type="text" name="" id="phone" maxlength="10" minlength="10" required>
                             </div>
                             <div>
                                 <label for="post">Post:</label>
-                                <input type="text" name="" id="post">
+                                <input type="text" name="" id="post" required>
                             </div>
                             <div>
                                 <label for="sDate">Start Date:</label>
-                                <input type="date" name="" id="sDate">
+                                <input type="date" name="" id="sDate" required>
                             </div>
 
                         </div>
@@ -117,6 +117,7 @@
                 </div>
 
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" form="myForm" class="btn btn-primary submit">Submit</button>
                 </div>
             </div>
@@ -124,7 +125,7 @@
     </div>
     <!--read data modal-->
     <div class="modal fade" id="readData">
-        <div class="modal-dialog modal-dialog-centered modal lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Profile</h4>
