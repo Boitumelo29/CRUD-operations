@@ -20,6 +20,14 @@ let getData = localStorage.getItem("userProfile") ? JSON.parse(localStorage.getI
 let isEdit = false, editId
 
 
+newUserBtn.addEventListener('click', ()=> {
+    submitBtn.innerText = 'Submit',
+    modalTitle.innerText = 'Fill the form'
+    isEdit = false
+    imgInput.src = "/person_icon.png"
+    form.rest()
+})
+
 //I stopped at 20: 01
 file.onchange = function(){
     if(file.files[0].size < 100000000){
@@ -36,9 +44,10 @@ file.onchange = function(){
 }
 
 function showInfo(){
+    document.querySelectorAll('.empolyeeDetails').forEach(info => info.remove())
     getData.forEach((element, index)=>{
-        let createElement = `<tr class= "employeDetails"> 
-        <td>${index+1}</td>
+        let createElement = `<tr class= "empolyeeDetails"> 
+        <td>${index+2}</td>
         <td><img src="${element.picture}" alt="" width="50" height="50"></td>
         <td>${element.employeeName}</td>
         <td>${element.employeeAge}</td>
@@ -48,9 +57,54 @@ function showInfo(){
         <td>${element.employeePost}</td>
         <td>${element.startDate}</td>
         
+        <td>
+        <button class= "btn btn-success" onclick="readInfo('${element.picture}, ${element.employeeName}, ${element.employeeAge}, ${element.employeeCity}, ${element.employeeEmail}, ${element.employeePhone}, ${element.employeePost},  ${element.startDate}')" data-bs-toggle="modal" data-bs-target="#readData"><i class="bi bi-eye"></i></button>
+        <button class= "btn btn-primary" onclick="editInfo('${element.index}, ${element.picture}, ${element.employeeName}, ${element.employeeAge}, ${element.employeeCity}, ${element.employeeEmail}, ${element.employeePhone}, ${element.employeePost},  ${element.startDate}')" data-bs-toggle="modal" data-bs-target="#userForm"><i class="bi bi-pencil-square"></i></button>
+        <button class="btn btn-danger" onclick="deleteInfo(${index})"><i class="bi bi-trash"></i></button>
+        </td>
         </tr>`
+
+        userInfo.innerHTML+= createElement
     })
 }
+
+function readInfo(pic, name, age, city,email, phone, post, sDate){
+    document.querySelector('.showImg').src = pic,
+    document.querySelector('#showName').value = name,
+    document.querySelector("#showAge").value = age,
+    document.querySelector("#showCity").value = city,
+    document.querySelector("#showEmail").value = email,
+    document.querySelector("#showPhone").value = phone,
+    document.querySelector("#showPost").value = post,
+    document.querySelector("#showsDate").value = sDate
+}
+
+function editInfo(index, pic, name, age, city, email, phone, post, sDate){
+
+    isEdit=true,
+    editId = index,
+    imgInput.src =pic,
+    userName.value = name,
+    age.value = age,
+    city.value =city,
+    email.value = email,
+    phone.value = phone,
+    post.value = post,
+    sDate.value = sDate
+
+    submitBtn.innerText = "Update"
+    modalTitle.innerText = "Update The Form"
+
+}
+
+function deleteInfo(index){
+    if(confirm("Are you are you want to delete")){
+        getData.splice(index, 1)
+        localStorage.setItem("userProfile", JSON.stringify(getData))
+        showInfo()
+    }
+}
+
 
 form.addEventListener('submit', (e)=>{
     e.preventDefault()
